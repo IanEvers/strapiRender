@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "institucionales",
+  "info": {
+    "singularName": "institucional",
+    "pluralName": "institucionales",
+    "displayName": "institucional"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "textoPrincipal": {
+      "type": "richtext"
+    },
+    "imagenes": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

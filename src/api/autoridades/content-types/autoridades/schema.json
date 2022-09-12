@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "autoridadeses",
+  "info": {
+    "singularName": "autoridades",
+    "pluralName": "autoridadeses",
+    "displayName": "autoridades"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "autoridadesTexto": {
+      "type": "richtext"
+    }
+  }
+}

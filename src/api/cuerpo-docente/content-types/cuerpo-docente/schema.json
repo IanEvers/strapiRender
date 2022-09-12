@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "cuerpo_docentes",
+  "info": {
+    "singularName": "cuerpo-docente",
+    "pluralName": "cuerpo-docentes",
+    "displayName": "cuerpo docente",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cuerpoDocente": {
+      "type": "richtext"
+    }
+  }
+}
