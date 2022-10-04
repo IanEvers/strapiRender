@@ -68,6 +68,12 @@
     },
     "accesoVeterinaria": {
       "type": "boolean"
+    },
+    "accesoJornadas30_09_2022": {
+      "type": "boolean"
+    },
+    "accesoJornadas01_10_2022": {
+      "type": "boolean"
     }
   }
 }
