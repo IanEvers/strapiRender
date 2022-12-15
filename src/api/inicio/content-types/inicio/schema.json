@@ -4,7 +4,8 @@
   "info": {
     "singularName": "inicio",
     "pluralName": "inicios",
-    "displayName": "inicio"
+    "displayName": "inicio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,16 @@
   "attributes": {
     "textoLaEscuela": {
       "type": "richtext"
+    },
+    "imagenEscuela": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
