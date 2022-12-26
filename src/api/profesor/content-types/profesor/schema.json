@@ -4,7 +4,8 @@
   "info": {
     "singularName": "profesor",
     "pluralName": "profesores",
-    "displayName": "Profesores"
+    "displayName": "Profesores",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,14 +16,15 @@
       "type": "string"
     },
     "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "rol": {
       "type": "enumeration",
@@ -35,6 +37,19 @@
         "adjunto",
         "auxiliar"
       ]
+    },
+    "cv": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "descripcion": {
+      "type": "string"
     }
   }
 }
