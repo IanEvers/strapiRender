@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ateneos",
+  "info": {
+    "singularName": "ateneo",
+    "pluralName": "ateneos",
+    "displayName": "ateneo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ateneo": {
+      "type": "richtext"
+    }
+  }
+}

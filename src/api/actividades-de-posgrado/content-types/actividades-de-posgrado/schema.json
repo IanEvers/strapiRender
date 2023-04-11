@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "actividades_de_posgrados",
+  "info": {
+    "singularName": "actividades-de-posgrado",
+    "pluralName": "actividades-de-posgrados",
+    "displayName": "actividades de posgrado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "actividades_de_posgrado": {
+      "type": "richtext"
+    }
+  }
+}
