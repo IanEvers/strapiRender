@@ -74,6 +74,15 @@
     },
     "accesoJornadas01_10_2022": {
       "type": "boolean"
+    },
+    "acceso_1er_anio": {
+      "type": "boolean"
+    },
+    "acceso_2do_anio": {
+      "type": "boolean"
+    },
+    "acceso_3er_anio": {
+      "type": "boolean"
     }
   }
 }
