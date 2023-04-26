@@ -83,6 +83,27 @@
     },
     "acceso_3er_anio": {
       "type": "boolean"
+    },
+    "acceso_premio_zalman_bronfman": {
+      "type": "boolean"
+    },
+    "acesso_clases_magistrales_schaffer": {
+      "type": "boolean"
+    },
+    "acceso_curso_online_2018": {
+      "type": "boolean"
+    },
+    "acceso_seminario_krichesky": {
+      "type": "boolean"
+    },
+    "acceso_1er_anio_2023": {
+      "type": "boolean"
+    },
+    "acceso_2do_anio_2023": {
+      "type": "boolean"
+    },
+    "acceso_3er_anio_2023": {
+      "type": "boolean"
     }
   }
 }
