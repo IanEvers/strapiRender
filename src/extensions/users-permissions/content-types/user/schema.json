@@ -104,6 +104,9 @@
     },
     "acceso_3er_anio_2023": {
       "type": "boolean"
+    },
+    "acceso_2das_jornadas_internacionales_2023": {
+      "type": "boolean"
     }
   }
 }
