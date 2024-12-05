@@ -116,6 +116,10 @@
     },
     "acceso_3er_anio_2024": {
       "type": "boolean"
+    },
+    "acceso_jornadas_2024": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
