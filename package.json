@@ -13,7 +13,7 @@
     "@strapi/plugin-i18n": "4.1.7",
     "@strapi/plugin-users-permissions": "4.1.7",
     "@strapi/provider-email-sendmail": "^4.1.12",
-    "@strapi/strapi": "4.1.7",
+    "@strapi/strapi": "4.1.11",
     "sqlite3": "^5.0.2"
   },
   "author": {
@@ -23,8 +23,8 @@
     "uuid": "b4a9b934-98e8-401e-9f60-ad3319a3e359"
   },
   "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
+    "node": "14.19.1",
+    "npm": "6.14.16"
   },
   "license": "MIT"
 }
