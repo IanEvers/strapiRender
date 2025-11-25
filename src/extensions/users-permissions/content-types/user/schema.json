@@ -120,6 +120,12 @@
     "acceso_jornadas_2024": {
       "type": "boolean",
       "default": false
+    },
+    "acceso_jornadas_14_noviembre_2025": {
+      "type": "boolean"
+    },
+    "acceso_jornadas_15_noviembre_2025": {
+      "type": "boolean"
     }
   }
 }
