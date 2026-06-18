@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_campus_materias",
+  "info": {
+    "displayName": "Materia",
+    "description": "Un link del campus (carpeta de Vimeo o link directo). Lleva sus coordenadas de display."
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "vimeoFolderId": {
+      "type": "string"
+    },
+    "urlPrefijo": {
+      "type": "string"
+    },
+    "urlOverride": {
+      "type": "string"
+    },
+    "seccion": {
+      "type": "string"
+    },
+    "seccionOrden": {
+      "type": "integer",
+      "default": 0
+    },
+    "nivelLabel": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

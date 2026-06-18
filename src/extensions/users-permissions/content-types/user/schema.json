@@ -63,6 +63,12 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "contenidos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::contenido.contenido",
+      "mappedBy": "users"
+    },
     "esSocio": {
       "type": "boolean"
     },
