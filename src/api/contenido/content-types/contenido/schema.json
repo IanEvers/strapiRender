@@ -38,14 +38,19 @@
     "anio": {
       "type": "string"
     },
-    "color": {
-      "type": "string"
-    },
     "orden": {
       "type": "integer",
       "default": 0
     },
     "requiereSocio": {
+      "type": "boolean",
+      "default": false
+    },
+    "paraSocios": {
+      "type": "boolean",
+      "default": false
+    },
+    "paraAlumnos": {
       "type": "boolean",
       "default": false
     },
