@@ -177,21 +177,21 @@ const CONTENIDOS = [
     materias: clase(CLASES_2023[2].materias, { seccion: 'Clases 2023', seccionOrden: 4, nivelLabel: 'Tercer Año', color: 'celeste', urlPrefijo: 'tercero 2023', cardOrden: 2 }) },
 
   // --- Clases 2024/2025/2026 (los flags _2024 se reusan para los 3 años) ---
-  { titulo: 'Clases 1er año 2024', slug: 'clases-1er-anio-2024', flagLegacy: 'acceso_1er_anio_2024', tipo: 'clase_anio', anio: '2024',
+  { titulo: 'Clases 1er año (en curso)', slug: 'clases-1er-anio-2024', flagLegacy: 'acceso_1er_anio_2024', tipo: 'clase_anio', anio: '2024',
     materias: [
       ...clase(CLASES_2026[0].materias, { seccion: 'Clases 2026', seccionOrden: 1, nivelLabel: 'Primer Año', color: 'verde', urlPrefijo: 'primero 2026', cardOrden: 0 }),
       ...clase(CLASES_2025[0].materias, { seccion: 'Clases 2025', seccionOrden: 2, nivelLabel: 'Primer Año', color: 'verde', urlPrefijo: 'primero 2025', cardOrden: 0 }),
       ...clase(CLASES_2024[0].materias, { seccion: 'Clases 2024', seccionOrden: 3, nivelLabel: 'Primer Año', color: 'verde', urlPrefijo: 'primero 2024', cardOrden: 0 }),
       ...COMBO_PRIMERO_SEGUNDO_2024, ...COMBO_TODOS_2024, ...COMBO_INTEGRACION_2025,
     ] },
-  { titulo: 'Clases 2do año 2024', slug: 'clases-2do-anio-2024', flagLegacy: 'acceso_2do_anio_2024', tipo: 'clase_anio', anio: '2024',
+  { titulo: 'Clases 2do año (en curso)', slug: 'clases-2do-anio-2024', flagLegacy: 'acceso_2do_anio_2024', tipo: 'clase_anio', anio: '2024',
     materias: [
       ...clase(CLASES_2026[1].materias, { seccion: 'Clases 2026', seccionOrden: 1, nivelLabel: 'Segundo Año', color: 'crema', urlPrefijo: 'segundo 2026', cardOrden: 1 }),
       ...clase(CLASES_2025[1].materias, { seccion: 'Clases 2025', seccionOrden: 2, nivelLabel: 'Segundo Año', color: 'crema', urlPrefijo: 'segundo 2025', cardOrden: 1 }),
       ...clase(CLASES_2024[2].materias, { seccion: 'Clases 2024', seccionOrden: 3, nivelLabel: 'Segundo Año', color: 'crema', urlPrefijo: 'segundo 2024', cardOrden: 2 }),
       ...COMBO_PRIMERO_SEGUNDO_2024, ...COMBO_TODOS_2024, ...COMBO_INTEGRACION_2025,
     ] },
-  { titulo: 'Clases 3er año 2024', slug: 'clases-3er-anio-2024', flagLegacy: 'acceso_3er_anio_2024', tipo: 'clase_anio', anio: '2024',
+  { titulo: 'Clases 3er año (en curso)', slug: 'clases-3er-anio-2024', flagLegacy: 'acceso_3er_anio_2024', tipo: 'clase_anio', anio: '2024',
     materias: [
       ...clase(CLASES_2026[2].materias, { seccion: 'Clases 2026', seccionOrden: 1, nivelLabel: 'Tercer Año', color: 'celeste', urlPrefijo: 'tercero 2026', cardOrden: 2 }),
       ...clase(CLASES_2025[2].materias, { seccion: 'Clases 2025', seccionOrden: 2, nivelLabel: 'Tercer Año', color: 'celeste', urlPrefijo: 'tercero 2025', cardOrden: 2 }),
@@ -273,6 +273,26 @@ module.exports = {
         });
       }
       strapi.log.info(`[campus] Seed: ${CONTENIDOS.length} contenidos creados`);
+    }
+
+    // 1b. Renombrar los contenidos de clases a nombres sin año (una sola vez).
+    // Son el "acceso al año en curso": cada año se les agregan materias, sin crear flags nuevos.
+    if (!(await store.get({ key: 'renombrar_clases_v1' }))) {
+      const renombres = {
+        acceso_1er_anio_2024: 'Clases 1er año (en curso)',
+        acceso_2do_anio_2024: 'Clases 2do año (en curso)',
+        acceso_3er_anio_2024: 'Clases 3er año (en curso)',
+      };
+      for (const [flag, titulo] of Object.entries(renombres)) {
+        const found = await strapi.entityService.findMany('api::contenido.contenido', {
+          filters: { flagLegacy: flag }, fields: ['id', 'titulo'], limit: 1,
+        });
+        if (found.length && found[0].titulo !== titulo) {
+          await strapi.entityService.update('api::contenido.contenido', found[0].id, { data: { titulo } });
+        }
+      }
+      await store.set({ key: 'renombrar_clases_v1', value: true });
+      strapi.log.info('[campus] Contenidos de clases renombrados (sin año).');
     }
 
     // 2. Migración flags -> links many-to-many. Corre una sola vez.
